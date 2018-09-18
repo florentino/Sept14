@@ -1,0 +1,62 @@
+          int B = 0;
+            for (int i = 0; i <= A.Length - 1; i++)
+            {
+                for (int ii = 0; ii <= A.Length - 1; ii++)
+                {
+                    if (A[i] > A[ii])
+                    {
+                        if (A[i] > B)
+                        {
+                            B = A[i];
+                        }
+                    }
+                }
+            }
+
+            int C = B;
+            for (int i = 0; i <= A.Length - 1; i++)
+            {
+                for (int ii = 0; ii <= A.Length - 1; ii++)
+                {
+                    if (A[i] < A[ii])
+                    {
+                        if (A[i] < C)
+                        {
+                            C = A[i];
+                        }
+                    }
+                }
+            }
+
+            int CC= 0;
+            for (int i = 0; i <= A.Length - 1; i++)
+            {
+                if (A[i] == C)
+                {
+                    CC = A[i] - CC;
+                }
+            }
+
+            int D = B;
+            for (int i = 0; i <= A.Length - 1; i++)
+            {
+                for (int ii = 0; ii <= A.Length - 1; ii++)
+                {
+                    if ((A[i] < A[ii]) && (A[i] > C) && (A[i] < D))
+                    {
+                        D = A[i];
+                    }
+                }
+            }
+
+            int DD = 0;
+            for (int i = 0; i <= A.Length - 1; i++)
+            {
+                if (A[i] == D)
+                {
+                    DD = A[i] - DD;
+                }
+            }
+            
+
+            DD = DD - CC;
